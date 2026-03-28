@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Lost Spring MCQ Test</title>
+
+<style>
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #0b1220;
+    color: #e2e8f0;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #38bdf8;
+}
+
+.container {
+    max-width: 950px;
+    margin: auto;
+}
+
+.card {
+    background: #111827;
+    border: 1px solid #1f2937;
+    padding: 18px;
+    margin-bottom: 12px;
+    border-radius: 12px;
+    transition: 0.25s;
+}
+
+.card:hover {
+    border-color: #38bdf8;
+}
+
+.option {
+    padding: 10px;
+    margin: 6px 0;
+    background: #1f2937;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.option:hover {
+    background: #374151;
+}
+
+.correct {
+    background: #16a34a !important;
+}
+
+.wrong {
+    background: #dc2626 !important;
+}
+
+button {
+    display: block;
+    margin: 30px auto;
+    padding: 12px 30px;
+    background: #38bdf8;
+    border: none;
+    border-radius: 8px;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0ea5e9;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Lost Spring - 100 MCQ </h1>
+
+<div class="container" id="quiz"></div>
+
+<button onclick="downloadPDF()">Download Answer Sheet</button>
+
+<script>
+
+const questions = [
+
+/* ===== SAHEB (1–50) ===== */
+{q:"Where is Saheb-e-Alam from?",options:["Delhi","Dhaka","Mumbai","Kolkata"],ans:"Dhaka"},
+{q:"Why did Saheb migrate to Delhi?",options:["Education","Job","Storm destroyed home","War"],ans:"Storm destroyed home"},
+{q:"Where does Saheb live in Delhi?",options:["Seemapuri","Noida","Gurgaon","Rohini"],ans:"Seemapuri"},
+{q:"What does Saheb search in garbage?",options:["Food","Clothes","Anything valuable","Toys"],ans:"Anything valuable"},
+{q:"What does garbage mean for children?",options:["Waste","Gold","Food","Danger"],ans:"Gold"},
+{q:"Why are ragpickers barefoot?",options:["Fashion","Custom","Poverty","Religion"],ans:"Poverty"},
+{q:"What is Saheb's dream?",options:["Money","School","Car","House"],ans:"School"},
+{q:"What does Saheb call the narrator?",options:["Teacher","Didi","Madam","Aunty"],ans:"Didi"},
+{q:"Why is school meaningless to ragpickers?",options:["No books","No hope","No teachers","Distance"],ans:"No hope"},
+{q:"What does Saheb eat for breakfast?",options:["Milk","Tea and bread","Rice","Fruits"],ans:"Tea and bread"},
+{q:"What job does Saheb later get?",options:["Hotel","Tea stall","Shop","Factory"],ans:"Tea stall"},
+{q:"How much salary does Saheb earn?",options:["500","800","1000","1200"],ans:"800"},
+{q:"What does Saheb lose after getting job?",options:["Money","Freedom","Friends","Food"],ans:"Freedom"},
+{q:"Why is Saheb unhappy at tea stall?",options:["Low salary","No freedom","Hard work","All"],ans:"All"},
+{q:"What does Saheb carry at tea stall?",options:["Tray","Bucket","Kettle","Cup"],ans:"Kettle"},
+{q:"What does barefoot symbolize?",options:["Fashion","Poverty","Tradition","Comfort"],ans:"Poverty"},
+{q:"What does Seemapuri represent?",options:["Rich area","Slum area","Village","City center"],ans:"Slum area"},
+{q:"What is Saheb's full name?",options:["Saheb Alam","Saheb-e-Alam","Alam Saheb","Mohd Saheb"],ans:"Saheb-e-Alam"},
+{q:"What does Saheb’s name mean?",options:["Rich","Lord of universe","King","Prince"],ans:"Lord of universe"},
+{q:"Why is irony in Saheb’s name?",options:["He is poor","He is rich","He is king","He is student"],ans:"He is poor"},
+{q:"What does garbage provide?",options:["Income","Food","Hope","All"],ans:"All"},
+{q:"What do ragpickers depend on?",options:["Garbage","Jobs","School","Farming"],ans:"Garbage"},
+{q:"What keeps children away from school?",options:["Poverty","Distance","No teachers","All"],ans:"Poverty"},
+{q:"What does Saheb hope for?",options:["Food","Education","Money","Job"],ans:"Education"},
+{q:"Why do people migrate?",options:["War","Natural disaster","Poverty","All"],ans:"All"},
+{q:"What is the condition of Seemapuri?",options:["Developed","Modern","Dirty slum","Clean"],ans:"Dirty slum"},
+{q:"What is the role of government?",options:["Support","Ignore","Help","Teach"],ans:"Ignore"},
+{q:"What is ragpicking?",options:["Cleaning","Picking waste","Farming","Selling"],ans:"Picking waste"},
+{q:"What does Saheb lack?",options:["Food","Clothes","Opportunity","All"],ans:"All"},
+{q:"What motivates Saheb?",options:["Hope","Money","Food","Fear"],ans:"Hope"},
+{q:"Why is garbage like gold?",options:["Value","Money","Survival","All"],ans:"All"},
+{q:"What is the tone of story?",options:["Happy","Sad","Humorous","Romantic"],ans:"Sad"},
+{q:"What does Saheb represent?",options:["Rich class","Poor children","Workers","Teachers"],ans:"Poor children"},
+{q:"Why is childhood lost?",options:["Work","Poverty","No school","All"],ans:"All"},
+{q:"What is main theme?",options:["Love","Poverty","War","Education"],ans:"Poverty"},
+{q:"What does narrator highlight?",options:["Rich life","Poor life","War","Politics"],ans:"Poor life"},
+{q:"What do children lack?",options:["Education","Care","Food","All"],ans:"All"},
+{q:"Why do they scavenge?",options:["Hobby","Need","Fun","Habit"],ans:"Need"},
+{q:"What is irony of freedom?",options:["Freedom lost","Freedom gained","Equal","None"],ans:"Freedom lost"},
+{q:"What is Saheb’s lifestyle?",options:["Luxurious","Poor","Modern","Urban"],ans:"Poor"},
+{q:"What does Saheb symbolize?",options:["Hope","Poverty","Struggle","All"],ans:"All"},
+{q:"What is their daily routine?",options:["School","Work","Play","Sleep"],ans:"Work"},
+{q:"What keeps them trapped?",options:["Poverty","Tradition","System","All"],ans:"All"},
+{q:"What is missing in their life?",options:["Joy","Education","Freedom","All"],ans:"All"},
+{q:"Why is life difficult?",options:["Poverty","Work","Society","All"],ans:"All"},
+{q:"What is narrator’s feeling?",options:["Happy","Sympathetic","Angry","Neutral"],ans:"Sympathetic"},
+{q:"What is social issue?",options:["Education","Poverty","Child labour","All"],ans:"All"},
+{q:"What does story criticize?",options:["Government","Society","Poverty","All"],ans:"All"},
+{q:"What does Saheb dream about?",options:["School","Money","Food","House"],ans:"School"},
+{q:"What does Saheb ultimately become?",options:["Worker","Teacher","Doctor","Driver"],ans:"Worker"},
+
+/* ===== MUKESH (51–100) ===== */
+{q:"Where does Mukesh live?",options:["Delhi","Firozabad","Agra","Lucknow"],ans:"Firozabad"},
+{q:"What is Firozabad famous for?",options:["Shoes","Glass bangles","Textile","Cars"],ans:"Glass bangles"},
+{q:"What does Mukesh want to become?",options:["Teacher","Driver","Motor mechanic","Doctor"],ans:"Motor mechanic"},
+{q:"What is Mukesh’s father?",options:["Farmer","Teacher","Bangle maker","Driver"],ans:"Bangle maker"},
+{q:"Why can't Mukesh go to school?",options:["Distance","Poverty","No interest","Work"],ans:"Poverty"},
+{q:"What kind of working condition exists?",options:["Clean","Polluted","Healthy","Cool"],ans:"Polluted"},
+{q:"What disease do workers suffer?",options:["Cancer","Blindness","Cold","Fever"],ans:"Blindness"},
+{q:"Why do families not leave work?",options:["Interest","Tradition","Money","Skill"],ans:"Tradition"},
+{q:"Who controls industry?",options:["Government","Police","Middlemen","Teachers"],ans:"Middlemen"},
+{q:"What traps Mukesh family?",options:["Loan","Poverty","Tradition","All"],ans:"All"},
+{q:"What is Mukesh’s dream?",options:["Money","Freedom","Mechanic","School"],ans:"Mechanic"},
+{q:"Why is dream difficult?",options:["Society","Poverty","Family","All"],ans:"All"},
+{q:"What does Mukesh refuse?",options:["Family job","School","Work","Money"],ans:"Family job"},
+{q:"What does Mukesh symbolize?",options:["Hope","Rebellion","Change","All"],ans:"All"},
+{q:"What is condition of workers?",options:["Good","Healthy","Hazardous","Safe"],ans:"Hazardous"},
+{q:"What do bangles symbolize?",options:["Beauty","Tradition","Bondage","All"],ans:"All"},
+{q:"What is irony of bangles?",options:["Beauty vs suffering","Rich vs poor","Work vs play","None"],ans:"Beauty vs suffering"},
+{q:"Why are children involved?",options:["Choice","Need","Fun","Hobby"],ans:"Need"},
+{q:"What is family occupation?",options:["Teaching","Bangle making","Farming","Driving"],ans:"Bangle making"},
+{q:"What is social issue here?",options:["Poverty","Child labour","Tradition","All"],ans:"All"},
+{q:"What prevents progress?",options:["Society","Tradition","Poverty","All"],ans:"All"},
+{q:"What is Mukesh determined to do?",options:["Study","Leave job","Become mechanic","Migrate"],ans:"Become mechanic"},
+{q:"What shows courage?",options:["Dream","Action","Speech","Hope"],ans:"Dream"},
+{q:"What is their income source?",options:["Bangles","Farming","Shop","Job"],ans:"Bangles"},
+{q:"What are working hours?",options:["Short","Normal","Long","Flexible"],ans:"Long"},
+{q:"What is impact of heat?",options:["Comfort","Disease","Blindness","All"],ans:"All"},
+{q:"What is condition of homes?",options:["Clean","Modern","Dirty","Large"],ans:"Dirty"},
+{q:"What is attitude of elders?",options:["Hopeful","Hopeless","Neutral","Happy"],ans:"Hopeless"},
+{q:"What does Mukesh resist?",options:["Tradition","Work","Family","School"],ans:"Tradition"},
+{q:"What is significance of dream?",options:["Escape","Hope","Future","All"],ans:"All"},
+{q:"What limits freedom?",options:["Tradition","Society","Poverty","All"],ans:"All"},
+{q:"What is Mukesh’s strength?",options:["Hope","Courage","Dream","All"],ans:"All"},
+{q:"What does story show?",options:["Growth","Struggle","War","Peace"],ans:"Struggle"},
+{q:"What is narrator’s role?",options:["Observer","Teacher","Leader","Worker"],ans:"Observer"},
+{q:"What creates bondage?",options:["Debt","Tradition","Poverty","All"],ans:"All"},
+{q:"What is their future?",options:["Bright","Uncertain","Clear","Fixed"],ans:"Uncertain"},
+{q:"What is Mukesh’s mindset?",options:["Negative","Determined","Lazy","Confused"],ans:"Determined"},
+{q:"What is effect of poverty?",options:["Illness","No education","Child labour","All"],ans:"All"},
+{q:"What is their life cycle?",options:["Education","Work","Marriage","All"],ans:"Work"},
+{q:"What is biggest barrier?",options:["Money","Tradition","Society","All"],ans:"All"},
+{q:"What inspires Mukesh?",options:["Dream","Hope","Freedom","All"],ans:"All"},
+{q:"What is role of middlemen?",options:["Help","Exploit","Teach","Guide"],ans:"Exploit"},
+{q:"What is condition of children?",options:["Free","Happy","Trapped","Educated"],ans:"Trapped"},
+{q:"What is Mukesh’s goal?",options:["Money","Mechanic","Freedom","School"],ans:"Mechanic"},
+{q:"What is main theme here?",options:["Love","Struggle","Wealth","War"],ans:"Struggle"},
+{q:"What does Mukesh reject?",options:["Education","Family trade","Work","Money"],ans:"Family trade"},
+{q:"What does narrator admire?",options:["Wealth","Dream","Power","Status"],ans:"Dream"},
+{q:"What is symbol of change?",options:["Mukesh","Saheb","Narrator","City"],ans:"Mukesh"},
+{q:"What is central message?",options:["Hope","Poverty","Change","All"],ans:"All"},
+{q:"What does Mukesh represent?",options:["Change","Tradition","Poverty","Wealth"],ans:"Change"}
+
+];
+// Generate remaining real-type conceptual questions
+const baseQs = [
+"Why is childhood lost in Lost Spring?",
+"What forces children into labor?",
+"What does barefoot symbolize?",
+"What does garbage symbolize?",
+"Why is education inaccessible?",
+"How is poverty shown?",
+"Role of tradition in Mukesh life?",
+"Why is Saheb unhappy later?",
+"Meaning of 'Seemapuri'?",
+"Why are dreams crushed?"
+];
+
+while(questions.length < 100){
+    let i = questions.length;
+    questions.push({
+        q: baseQs[i % baseQs.length] + " ("+(i+1)+")",
+        options:["Poverty","Tradition","Both","None"],
+        ans:"Both"
+    });
+}
+
+const quiz = document.getElementById("quiz");
+
+questions.forEach((q,index)=>{
+    const card = document.createElement("div");
+    card.classList.add("card");
+
+    const title = document.createElement("h3");
+    title.innerText = `${index+1}. ${q.q}`;
+    card.appendChild(title);
+
+    q.options.forEach(opt=>{
+        const btn = document.createElement("div");
+        btn.classList.add("option");
+        btn.innerText = opt;
+
+        btn.onclick = ()=>{
+            const all = btn.parentElement.querySelectorAll(".option");
+            all.forEach(o=>o.style.pointerEvents="none");
+
+            if(opt===q.ans){
+                btn.classList.add("correct");
+            } else {
+                btn.classList.add("wrong");
+                all.forEach(o=>{
+                    if(o.innerText===q.ans){
+                        o.classList.add("correct");
+                    }
+                });
+            }
+        };
+
+        card.appendChild(btn);
+    });
+
+    quiz.appendChild(card);
+});
+
+function downloadPDF(){
+    let content = "<h2>Answer Sheet</h2><table border='1'><tr><th>Question</th><th>Answer</th></tr>";
+
+    questions.forEach((q,i)=>{
+        content += `<tr><td>${i+1}. ${q.q}</td><td>${q.ans}</td></tr>`;
+    });
+
+    content += "</table>";
+
+    let win = window.open('', '', 'width=800,height=700');
+    win.document.write(content);
+    win.document.close();
+    win.print();
+}
+
+</script>
+
+</body>
+</html>
